@@ -1,0 +1,124 @@
+/* get rid of arrows in number field */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.todos__container {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  /* gap: 1em; */
+  max-width: 35em;
+  margin: 0 auto;
+  background: var(--color-light-grey);
+}
+
+.todo-item__container {
+  background: white;
+  border: 1px solid rgba(40, 40, 70, 0.2);
+  border-radius: 10px;
+  padding: 1em 1em 1em 1em;
+  margin: 0.5em 2em;
+  position: relative;
+  color: #282846;
+  
+}
+
+.todo-item__container:hover {
+  box-shadow: 1px 6px 6px 1px #898d94;
+  cursor: pointer
+}
+
+.todo-item__footer {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-item__button {
+  background:white;
+  color: #282846;
+  height: 1.5em;
+  width: 3.5em;
+  border: 1px solid rgba(40, 40, 70, 0.3);
+  margin-left: 1em;
+  border-radius: 5px;
+}
+
+.todo-item__button:hover {
+  background:rgb(7, 98, 245);
+  color: white;
+  cursor: pointer;
+}
+
+.todo-item--actions {
+  display: flex;
+  align-content: flex-end;
+}
+
+.todo-item--delete:hover {
+  cursor: pointer;
+  color: #282846;
+  background: rgb(245, 130, 130, 0.5);
+}
+
+.todo-item--done {
+  background: rgba(40, 40, 70, 0.1);
+  order: 10;
+  color: grey;
+}
+
+.todo-item--text-for-done {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.todo-list__pill {
+  padding: 1.5em;
+  position: fixed;
+  bottom: 3.5em;
+  right: 10vw;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: rgba(40, 40, 70, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.list__header {
+  
+}
+
+.list__infos {
+  display: flex;
+  /* justify-content: space-around; */
+  max-width: 35em;
+  /* align-items: center; */
+  margin: 0 auto;
+  padding: 0.5em;
+  background: var(--color-light-grey);
+}
+
+.list__infos h3{
+  width: 100%;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.list__infos p{
+  width: 98%;
+  text-align: right;
+  margin-right: 10px;
+}
