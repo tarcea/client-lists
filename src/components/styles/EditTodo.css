@@ -3,7 +3,7 @@
   max-width: 35em;
   display: flex;
   flex-direction:column;
-  padding:1em;
+  padding: 1em 1em 0 1em;
   margin: 0 auto;
   position: relative;
 }
@@ -48,6 +48,11 @@
   border-radius:5px;
   border: 1px solid rgba(40, 40, 70, 0.3);
   padding: 0.5em;
+}
+
+.edit-todo__form input[type=submit]:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .edit-todo--quit {

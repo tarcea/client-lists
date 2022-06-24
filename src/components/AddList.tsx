@@ -1,13 +1,10 @@
-import React, { useState, FC, FormEvent, useContext } from "react";
-import { UserContext } from "../contexts/UserContext";
+import React, { useState, FC, FormEvent } from 'react';
 import './styles/AddList.css';
 import './styles/EditTodo.css';
 
 const AddList: FC<{ saveList: Function }> = ({ saveList }) => {
-  const initialState: Omit<IList, '_id' | 'done'> = { name: '', userId: '' };
+  const initialState: Omit<IList, '_id' | 'done'> = { name: '' };
   const [formData, setFormData] = useState(initialState);
-  const value = useContext(UserContext);
-  const { userId } = value!.currentUser;
 
   const handleChange = (e: FormEvent<HTMLInputElement>) => {
     setFormData({
@@ -15,19 +12,18 @@ const AddList: FC<{ saveList: Function }> = ({ saveList }) => {
       [e.currentTarget.id]: e.currentTarget.value,
     });
   };
-  console.log(userId)
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await saveList({ ...formData, userId });
-    console.log({ ...formData, userId })
+    await saveList({ ...formData });
     setFormData(initialState);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="add-list__form">
+    <form onSubmit={handleSubmit} className='add-list__form'>
       <div>
         <input
           className='add-list'
+          autoComplete='off'
           value={formData.name}
           placeholder='add a new list'
           onChange={handleChange}
@@ -37,9 +33,9 @@ const AddList: FC<{ saveList: Function }> = ({ saveList }) => {
         />
       </div>
       <div>
-        <button className="add-list--create">Create List</button>
+        <button className='add-list--create'>Create List</button>
       </div>
-    </form >
+    </form>
   );
 };
 
